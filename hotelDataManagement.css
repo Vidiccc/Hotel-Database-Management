@@ -1,0 +1,143 @@
+body {
+  background-color: #f5f0e1;
+}
+nav {
+  overflow: hidden;
+  background-color: #ecc19c;
+}
+nav a {
+  margin: auto;
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+nav a:hover {
+  background-color: #ddc3a5;
+  color: black;
+}
+
+nav a.active {
+  background-color: #1d3c45;
+  color: white;
+}
+#login-container {
+  float: right;
+}
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+
+/*title here*/
+#text-box1{
+  width: 70%;
+  color: white;
+  background: #c66b3d;
+  border-radius: 20px;
+  margin: 20px auto;
+  padding: 10px 40px 0px 40px;
+}
+#title{
+  text-align: center;
+  line-height: 2px;
+  font-weight: bold;
+}
+#sub-title{
+  text-align: center;
+  padding-bottom: 10px;
+}
+#hr {
+  border-top: 0px;
+}
+
+/*main*/
+main{
+  text-align: center;
+  line-height: 0px;
+  width: 70%;
+  color: white;
+  background: #1e3d59;
+  margin: 20px auto;
+  padding: 0px 40px 0px 40px;
+  border-radius: 20px;
+}
+#first-main-header{
+  padding-top: 25px;
+}
+h2{
+  font-size: 25px;
+  text-decoration: underline;
+  color: #c66b3d;
+}
+.label{
+  font-size: 18px;
+  text-align: left;
+  line-height: 35px;
+}
+.input-bar{
+  width: 100%;
+  height: 30px;
+  text-align: center;
+}
+.select-bar{
+  width: 101.5%;
+  height: 35px;
+  text-align: center;
+}
+#submit{
+  width: 20%;
+  margin-left: 40%;
+  background: #d2601a;
+  cursor: pointer;
+}
+
+/*link color*/
+#main a{
+  text-align: center;
+  margin: auto;
+}
+main a:link {
+  color: #f5beb4;
+  background-color: transparent;
+  text-decoration: none;
+}
+main a:visited {
+  color: #f57e7e;
+  background-color: transparent;
+  text-decoration: none;
+}
+main a:hover {
+  color: #b85042;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+main a:active {
+  color: #cfb845;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/*in update*/
+table{
+  color: white;
+}
+table tr{
+  color: ;
+}
+#instruction{
+  font-size: 15px;
+  text-align: center;
+}

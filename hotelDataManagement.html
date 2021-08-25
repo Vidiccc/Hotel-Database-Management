@@ -1,0 +1,112 @@
+<html>
+<head>
+	<title>Hotel Database Management</title>
+	<link rel="stylesheet" href="hotelDataManagement.css">
+	<link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+	<header>
+	<nav>
+		<a href="#" class="active">Home</a> 		
+		<a href="#">About Us</a> 	
+		<a href="#">Service</a> 	
+		<a href="#">Cuisine</a>		
+		<a href="#">Booking</a>		
+		<div id="login-container">
+			<button id="login-button" onclick="document.getElementById('id01').style.display='block'">Login</button>
+		</div>
+	</nav>
+	</header>
+
+	<!-- Login Form -->
+	<div id="id01" class="modal">
+	<form class="modal-content animate" action="hotelDataManagement.html" method="post">
+		  <div class="imgcontainer">
+	      	<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		    <img src="https://i.pinimg.com/originals/da/b9/13/dab913ab4fec9a9cb5b38b6ce8c00902.png" alt="Avatar" class="avatar">
+		  </div>
+
+	      <div class="container">
+		    <label for="username"><b>Username</b></label>
+	      	<input class="login-input" type="text" placeholder="Enter Username" name="username" required>
+
+	      	<label for="psw"><b>Password</b></label>
+	      	<input class="login-input" type="password" placeholder="Enter Password" name="psw" required>
+		        
+	      	<button type="submit">Login</button>
+	      	<label>
+	          <input type="checkbox" checked="checked" name="remember"> Remember me
+	      	</label>
+		</div>
+
+		<div class="container" style="background-color:#f1f1f1">
+  		  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+  		  <span class="psw">Forgot <a href="#">password?</a></span>
+		</div>
+		</form>
+	</div>
+
+	<!-- Front Page -->
+	<div id="text-box1">
+		<h1 id="title">Hotel Database Management</h1> <hr id="hr">
+		<p id="sub-title">Welcome</p>
+	</div>
+	
+	<main>
+	<h2 id="first-main-header">Show data</h2>
+	<section class="label">
+
+	<form action="show.php" method="post">
+	<label for="showType">Search for:</label> <br>
+
+	<select name="showType" id="showType" class="select-bar">
+		<option value="all"selected>All Tables</option>
+		<option value="customer">Customer</option>
+		<option value="order_list">Order list</option>
+		<option value="product">Product</option>
+		<option value="branch">Branch</option>
+		<option value="contains">Contains</option>
+		<option value="offers">Offers</option>
+	</select> <br>
+
+	<button type="submit" id="submit"> Submit </button>	 
+	</form>
+	</section>
+
+
+<!--khúc này vô search nè-->
+	<h2>Search for data</h2>
+	<section class="label">
+
+	<form action="search.php" method="post">
+	<label for="ftype">Search for:</label>
+
+	<select name="ftype" id="ftype" class="select-bar">
+		<option value="studentent">Student</option>
+		<option value="customer">Customer</option>
+		<option value="order_list">Order list</option>
+		<option value="product"selected>Product</option>
+		<option value="branch">Branch</option>
+		<option value="contains">Contains</option>
+		<option value="offers">Offers</option>
+	</select>
+
+	<label for="fname">Input:</label>
+	<input type="text" name="fname" id="fname" class="input-bar" placeholder="Name, title..." required>
+
+	<button type="submit" id="submit"> Submit </button>	
+	</form>
+	</section>
+
+<!--khúc này vô Update nè-->
+	<h2>Update Database</h2>
+		<a class='label' href="update.html">Go to Database Update Center</a>
+	</main>
+
+
+<script src="login.js"> </script>
+
+
+</body>
+</html>

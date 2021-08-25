@@ -1,0 +1,255 @@
+<html>
+<head>
+	<title>Hotel Database Management</title>
+	<link rel="stylesheet" href="hotelDataManagement.css">
+	<link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+	<header>
+	<nav>
+		<a href="#" class="active">Home</a> 		
+		<a href="#">About Us</a> 	
+		<a href="#">Service</a> 	
+		<a href="#">Cuisine</a>		
+		<a href="#">Booking</a>		
+		<div id="login-container">
+			<button id="login-button" onclick="document.getElementById('id01').style.display='block'">Login</button>
+		</div>
+	</nav>
+	</header>
+
+	<!-- Login Form -->
+	<div id="id01" class="modal">
+	<form class="modal-content animate" action="hotelDataManagement.html" method="post">
+		  <div class="imgcontainer">
+	      	<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		    <img src="https://i.pinimg.com/originals/da/b9/13/dab913ab4fec9a9cb5b38b6ce8c00902.png" alt="Avatar" class="avatar">
+		  </div>
+
+	      <div class="container">
+		    <label for="username"><b>Username</b></label>
+	      	<input class="login-input" type="text" placeholder="Enter Username" name="username" required>
+
+	      	<label for="psw"><b>Password</b></label>
+	      	<input class="login-input" type="password" placeholder="Enter Password" name="psw" required>
+		        
+	      	<button type="submit">Login</button>
+	      	<label>
+	          <input type="checkbox" checked="checked" name="remember"> Remember me
+	      	</label>
+		</div>
+
+		<div class="container" style="background-color:#f1f1f1">
+  		  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+  		  <span class="psw">Forgot <a href="#">password?</a></span>
+		</div>
+		</form>
+	</div>
+
+	<div id="text-box1">
+		<h1 id="title">Database Update Center</h1> <hr id="hr">
+		<p id="sub-title">Welcome</p>
+	</div>
+
+	<main>
+	<h2 id="first-main-header">Modify Data</h2>
+	<section class="label">
+
+	<form action="modify.php" method="post">
+	<p id="instruction">Please select the table, then fill in the id that matches the database to update that row.</p>
+	<label for="utype">Update for:</label>
+
+<!--dươi khúc này là chọn value là bảng nào-->
+	<select name="utype" id="utype" class="select-bar" required onchange="update(this)">
+		<option disabled value selected>Choose</option>
+		<option value="customer">Customer</option>
+		<option value="order_list">Order list</option>
+		<option value="product">Product</option>
+		<option value="branch">Branch</option>
+		<option value="contains">Contains</option>
+		<option value="offers">Offers</option>
+	</select> <br>
+
+
+
+<!--khúc này m phải làm sao để chỉnh sửa table theo mấy cái value trên-->
+	<table>
+		<tr id="uatt1">
+			
+		</tr>
+		<tr id="uatt2">
+			
+		</tr>
+		<tr id="uatt3">
+			
+		</tr>
+		<tr id="uatt4">
+			
+		</tr>
+		<tr id="uatt5">
+
+		</tr>
+		<tr id="uatt6">
+
+		</tr>
+		<tr id="uatt7">
+
+		</tr>
+		<tr id="uatt8">
+
+		</tr>
+		<tr id="uatt9">
+
+		</tr>
+		<tr id="uatt10">
+
+		</tr>
+		<tr id="uatt11">
+
+		</tr>
+		<tr id="uatt12">
+
+		</tr>
+		<tr id="uatt13">
+
+		</tr>
+	</table>	
+	<button type="submit" id="submit"> Submit </button>	
+	</form>
+	</section>
+
+<!--khúc này vô Insert nè-->
+<h2>Insert New Tuple</h2>
+<section class="label">
+<form action="insert.php" method="post">
+
+	<label for="itype">Insert for:</label>
+<!--dươi khúc này là chọn value là bảng nào-->
+	<select name="itype" id="itype" class="select-bar" required onchange="insert(this)">
+		<option disabled value selected>Choose</option>
+		<option value="customer">Customer</option>
+		<option value="order_list">Order list</option>
+		<option value="product">Product</option>
+		<option value="branch">Branch</option>
+		<option value="contains">Contains</option>
+		<option value="offers">Offers</option>
+	</select>
+
+
+<!--khúc này m phải làm sao để chỉnh sửa table theo mấy cái value trên-->
+	<table>
+		<tr id="iatt1">
+			
+		</tr>
+		<tr id="iatt2">
+			
+		</tr>
+		<tr id="iatt3">
+			
+		</tr>
+		<tr id="iatt4">
+			
+		</tr>
+		<tr id="iatt5">
+
+		</tr>
+		<tr id="iatt6">
+
+		</tr>
+		<tr id="iatt7">
+
+		</tr>
+		<tr id="iatt8">
+
+		</tr>
+		<tr id="iatt9">
+
+		</tr>
+		<tr id="iatt10">
+
+		</tr>
+		<tr id="iatt11">
+
+		</tr>
+		<tr id="iatt12">
+
+		</tr>
+		<tr id="iatt13">
+
+		</tr>
+	</table>
+	<button type="submit" id="submit"> Submit </button>		
+</form>
+</section>
+
+<!-- khúc này vô Delete nè -->
+<h2>Delete a Tuple</h2>
+<section class="label">
+<form action="delete.php" method="post">
+
+	<label for="rtype">Delete for:</label>
+<!--dươi khúc này là chọn value là bảng nào-->
+	<select name="rtype" id="rtype" class="select-bar" required onchange="remove(this)">
+		<option disabled value selected>Choose</option>
+		<option value="customer">Customer</option>
+		<option value="order_list">Order list</option>
+		<option value="product">Product</option>
+		<option value="branch">Branch</option>
+		<option value="contains">Contains</option>
+		<option value="offers">Offers</option>
+	</select>
+
+
+<!--khúc này m phải làm sao để chỉnh sửa table theo mấy cái value trên-->
+	<table>
+		<tr id="ratt1">
+			
+		</tr>
+		<tr id="ratt2">
+			
+		</tr>
+		<tr id="ratt3">
+			
+		</tr>
+		<tr id="ratt4">
+			
+		</tr>
+		<tr id="ratt5">
+
+		</tr>
+		<tr id="ratt6">
+
+		</tr>
+		<tr id="ratt7">
+
+		</tr>
+		<tr id="ratt8">
+
+		</tr>
+		<tr id="ratt9">
+
+		</tr>
+		<tr id="ratt10">
+
+		</tr>
+		<tr id="ratt11">
+
+		</tr>
+		<tr id="ratt12">
+
+		</tr>
+		<tr id="ratt13">
+
+		</tr>
+	</table>
+	<button type="submit" id="submit"> Submit </button>		
+</form>
+</section>
+	<a class='label' href="hotelDataManagement.html">Go back to Hotel Database Management front page</a>
+</main>
+<script src="hotel.js"> </script>
+<script src="login.js"> </script>
+
+</body>
+</html>
